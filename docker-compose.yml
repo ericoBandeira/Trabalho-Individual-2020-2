@@ -1,0 +1,35 @@
+version: '3'
+
+services: 
+    front:
+        build: 
+            context: client
+            dockerfile: Dockerfile
+        volumes: 
+            - './client:/front'
+        ports: 
+            - '8080:8080'
+        depends_on: 
+            - back
+    
+    back:
+        build:
+            context: api
+            dockerfile: Dockerfile
+        environment: 
+            POSTGRES_HOST: data
+        volumes:
+            - './api:/rest'
+        ports:
+            - '8000:8000'
+        depends_on: 
+            - data
+
+    data:
+        image: postgres:13.2
+        environment: 
+            POSTGRES_DB: myproject
+            POSTGRES_USER: myuser
+            POSTGRES_PASSWORD: password
+        ports: 
+            - '5432:5432'

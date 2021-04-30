@@ -1,11 +1,9 @@
 FROM node:14.16.1
 
+RUN yarn global add @quasar/cli
+
 WORKDIR /front
 
 COPY . . 
-
-RUN yarn global add @quasar/cli
-
-RUN yarn install
 
 CMD yarn && quasar dev
