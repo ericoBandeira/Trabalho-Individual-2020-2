@@ -87,3 +87,4 @@ Caso cumpra todos os requisitos obrigatórios descritos acima, será atribuída 
 Caso cumpra todos os requisitos obrigatórios descritos acima, será atribuída uma pontuação extra para o aluno que configure sua pipeline de modo a publicar a aplicação automaticamente, sempre que um novo trecho de código seja integrado à branch default.
 
 
+
