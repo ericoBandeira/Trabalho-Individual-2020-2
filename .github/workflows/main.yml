@@ -39,7 +39,7 @@ jobs:
 
 
       - name: Tests in frontend App
-        run: docker-compose run app bash -c "yarn install && yarn test:unit"
+        run: docker-compose run app bash -c "yarn && yarn test:unit"
 
   frontCI:
 
@@ -51,4 +51,4 @@ jobs:
 
 
       - name: Frontend Lint
-        run: docker-compose run app bash -c "yarn install && yarn lint"
+        run: docker-compose run app bash -c "yarn && yarn lint"
