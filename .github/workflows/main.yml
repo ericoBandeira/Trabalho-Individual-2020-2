@@ -51,3 +51,27 @@ jobs:
 
       - name: Frontend Lint
         run: docker-compose run front bash -c "yarn && yarn lint"
+
+  backTests:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v2
+
+
+      - name: Back Tests
+        run: docker-compose run back python3 manage.py test
+
+  backCI:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v2
+
+
+      - name: Back Lint
+        run: docker-compose run back bash -c "pylint *.py"
