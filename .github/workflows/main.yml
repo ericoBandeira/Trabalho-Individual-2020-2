@@ -62,7 +62,7 @@ jobs:
 
 
       - name: Back Tests
-        run: docker-compose run rest python3 manage.py test
+        run: docker-compose run back python3 manage.py test
 
   backCI:
 
@@ -74,4 +74,4 @@ jobs:
 
 
       - name: Back Lint
-        run: docker-compose run rest bash -c "pylint *.py"
+        run: docker-compose run back bash -c "pylint *.py"
